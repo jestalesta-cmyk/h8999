@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server Trolling - H89 Dev Tools</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/static/tailwind.min.css">
+    <style>
+        body { background-color: #050505; color: #e6e6e9; font-family: 'Inter', sans-serif; }
+        .card { background: #0a0a0c; border: 1px solid #1a1a1a; border-radius: 12px; padding: 20px; transition: all 0.2s; }
+        .card:hover { border-color: #f43f3f; box-shadow: 0 0 15px rgba(244,63,63,0.1); transform: translateY(-2px); }
+        .btn-troll { background: #f43f3f; color: white; padding: 10px 15px; border-radius: 8px; font-weight: bold; width: 100%; transition: all 0.2s; }
+        .btn-troll:hover { background: #e03131; }
+        .btn-outline { background: transparent; border: 1px solid #333; color: white; padding: 10px 15px; border-radius: 8px; font-weight: bold; width: 100%; transition: all 0.2s; }
+        .btn-outline:hover { border-color: #f43f3f; color: #f43f3f; }
+    </style>
+</head>
+<body class="pb-12">
+    <!-- Header -->
+    <header class="border-b border-[#1a1a1a] bg-[#050505]/90 backdrop-blur sticky top-0 z-40">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <a href="/" class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-[#0a0a0c] border border-[#1a1a1a] flex items-center justify-center overflow-hidden">
+                        <img src="/static/logo.png" alt="Logo" class="w-full h-full object-cover">
+                    </div>
+                    <div class="leading-tight"><h1 class="text-base font-extrabold text-white">H89 Dev Tools</h1></div>
+                </a>
+            </div>
+            <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-[#8b8b93]">
+                <a href="/" class="hover:text-white transition">Home</a>
+                <a href="/dashboard" class="hover:text-white transition">Dashboard</a>
+                <a href="/console" class="hover:text-white transition">Console</a>
+                <a href="/trolling" class="text-white transition">Server Trolling</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 py-10">
+        <div class="mb-10 text-center">
+            <h1 class="text-3xl font-extrabold text-white tracking-tight mb-2">Server Management & Trolling</h1>
+            <p class="text-[#8b8b93] max-w-2xl mx-auto">Execute remote actions, visual effects, and sound triggers on target connected servers. (Mockup UI Pipeline)</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Troll Card 1 -->
+            <div class="card flex flex-col gap-4">
+                <div class="flex items-center gap-3 text-red-500 text-xl font-bold">
+                    <i class="fa-solid fa-volume-high"></i> Global Audio
+                </div>
+                <p class="text-sm text-[#8b8b93] flex-grow">Play ear-rape or scary sounds globally to all connected players.</p>
+                <div class="flex gap-2">
+                    <button class="btn-outline text-xs" onclick="alert('Sent: PLAY_SOUND (Siren)')">Siren</button>
+                    <button class="btn-troll text-xs" onclick="alert('Sent: PLAY_SOUND (EarRape)')">Ear Rape</button>
+                </div>
+            </div>
+
+            <!-- Troll Card 2 -->
+            <div class="card flex flex-col gap-4">
+                <div class="flex items-center gap-3 text-yellow-500 text-xl font-bold">
+                    <i class="fa-solid fa-meteor"></i> Spawn Entities
+                </div>
+                <p class="text-sm text-[#8b8b93] flex-grow">Spawn massive objects or UFOs on top of players to block their view.</p>
+                <div class="flex gap-2">
+                    <button class="btn-outline text-xs" onclick="alert('Sent: SPAWN_ENTITY (Meteor)')">Meteor</button>
+                    <button class="btn-troll text-xs bg-yellow-600 hover:bg-yellow-700" onclick="alert('Sent: SPAWN_ENTITY (UFO)')">UFO Fleet</button>
+                </div>
+            </div>
+
+            <!-- Troll Card 3 -->
+            <div class="card flex flex-col gap-4">
+                <div class="flex items-center gap-3 text-purple-500 text-xl font-bold">
+                    <i class="fa-solid fa-desktop"></i> Screen Effects
+                </div>
+                <p class="text-sm text-[#8b8b93] flex-grow">Trigger screen shaking, drunken camera effects, or complete blackouts.</p>
+                <div class="flex gap-2">
+                    <button class="btn-outline text-xs" onclick="alert('Sent: EFFECT (Drunk)')">Drunk</button>
+                    <button class="btn-troll text-xs bg-purple-600 hover:bg-purple-700" onclick="alert('Sent: EFFECT (Earthquake)')">Earthquake</button>
+                </div>
+            </div>
+
+            <!-- Troll Card 4 -->
+            <div class="card flex flex-col gap-4">
+                <div class="flex items-center gap-3 text-green-500 text-xl font-bold">
+                    <i class="fa-solid fa-money-bill-wave"></i> Fake Money Drop
+                </div>
+                <p class="text-sm text-[#8b8b93] flex-grow">Show fake money notifications to players to cause server-wide confusion.</p>
+                <button class="btn-outline" onclick="alert('Sent: FAKE_MONEY_NOTIFY')">Trigger Money Drop UI</button>
+            </div>
+
+            <!-- Troll Card 5 -->
+            <div class="card flex flex-col gap-4">
+                <div class="flex items-center gap-3 text-blue-500 text-xl font-bold">
+                    <i class="fa-solid fa-user-ninja"></i> Clone Player
+                </div>
+                <p class="text-sm text-[#8b8b93] flex-grow">Create multiple hostile NPC clones of a target player.</p>
+                <button class="btn-troll bg-blue-600 hover:bg-blue-700" onclick="alert('Sent: CLONE_PLAYER_HOSTILE')">Execute Clone Attack</button>
+            </div>
+            
+            <!-- Troll Card 6 -->
+            <div class="card flex flex-col gap-4">
+                <div class="flex items-center gap-3 text-gray-400 text-xl font-bold">
+                    <i class="fa-brands fa-discord"></i> Webhook Spam
+                </div>
+                <p class="text-sm text-[#8b8b93] flex-grow">Send hundreds of fake logs to the server's Discord webhooks.</p>
+                <button class="btn-troll bg-gray-700 hover:bg-gray-600" onclick="alert('Sent: WEBHOOK_FLOOD')">Initialize Spam</button>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
